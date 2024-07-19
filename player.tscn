@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://mtaqt88ay4fo" path="res://assets/Sprits/Mask Dude/Fall (32x32).png" id="3_t6um5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22oul"]
+size = Vector2(20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl7y4"]
 atlas = ExtResource("1_pahpo")
@@ -113,9 +114,12 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_22oul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3djrc")
-animation = &"jump"
-frame_progress = 0.775984
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.687329
