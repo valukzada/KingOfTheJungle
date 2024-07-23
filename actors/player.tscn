@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://rlh74gqbj3ja"]
+[gd_scene load_steps=33 format=3 uid="uid://rlh74gqbj3ja"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_an1gp"]
 [ext_resource type="Texture2D" uid="uid://g0j00mycmhqe" path="res://assets/Sprits/Mask Dude/Idle (32x32).png" id="1_pahpo"]
 [ext_resource type="Texture2D" uid="uid://dsgtuqo3iwf1g" path="res://assets/Sprits/Mask Dude/Jump (32x32).png" id="2_epy3j"]
 [ext_resource type="Texture2D" uid="uid://mtaqt88ay4fo" path="res://assets/Sprits/Mask Dude/Fall (32x32).png" id="3_t6um5"]
@@ -202,12 +203,23 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_an1gp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_22oul")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+limit_left = -50
+limit_right = 1100
+limit_bottom = 550
+position_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3djrc")
 animation = &"run"
